@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>すまいPLUS｜住まいの悩み、まるごと解決するリフォーム</title>
+  <meta name="description" content="その住まいの悩み、そのままにしていませんか？すまいPLUSは地域密着・明朗会計の安心リフォーム。無料相談・お見積りはLINEまたはフォームから。" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="すまいPLUS｜住まいの悩み、まるごと解決するリフォーム" />
+  <meta property="og:description" content="その住まいの悩み、そのままにしていませんか？無料相談・お見積り受付中。" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #2f8f7d;       /* 落ち着いたグリーン */
+      --primary-dark: #246b5e;
+      --accent: #e8a13a;        /* 温かみのあるアクセント */
+      --ink: #243330;           /* 文字色 */
+      --muted: #6b7d78;         /* 補助テキスト */
+      --bg: #ffffff;
+      --bg-soft: #f4f8f6;       /* ほんのり緑がかった白 */
+      --line: #e3ebe8;
+      --line-bg: #06c755;       /* LINE公式カラー */
+      --radius: 16px;
+      --shadow: 0 8px 30px rgba(36, 51, 48, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; background: var(--bg); }
+
+    body {
+      font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      line-height: 1.7;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    section { padding: 64px 0; }
+
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .section-head .label {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1.4;
+      text-wrap: balance;
+    }
+    .section-head p { color: var(--muted); margin-top: 12px; }
+
+    /* ===== Header ===== */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 1.2rem; }
+    .logo .mark {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--primary); color: #fff;
+      display: grid; place-items: center; font-size: 1.1rem; font-weight: 900;
+    }
+    .logo .plus { color: var(--primary); }
+    .header-cta {
+      display: none;
+      background: var(--primary); color: #fff;
+      padding: 10px 20px; border-radius: 999px;
+      font-weight: 700; text-decoration: none; font-size: 0.9rem;
+    }
+    @media (min-width: 768px) { .header-cta { display: inline-block; } }
+
+    /* ===== Hero ===== */
+    .hero { position: relative; padding: 0; }
+    .hero-media { position: relative; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; min-height: 360px; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.55) 100%);
+    }
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.75) 55%, rgba(255,255,255,0.25) 100%);
+      }
+    }
+    .hero-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-content .container { width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--line);
+      color: var(--primary-dark); font-weight: 700; font-size: 0.78rem;
+      padding: 6px 14px; border-radius: 999px; box-shadow: var(--shadow);
+      margin-bottom: 18px; width: fit-content;
+    }
+    .hero h1 {
+      font-size: 1.9rem; font-weight: 900; line-height: 1.45;
+      text-wrap: balance; max-width: 18em;
+    }
+    .hero h1 .hl { color: var(--primary); }
+    .hero p.lead { margin-top: 16px; color: var(--ink); max-width: 26em; font-weight: 500; }
+    @media (min-width: 768px) {
+      .hero h1 { font-size: 2.7rem; }
+      .hero-media img { min-height: 540px; }
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-weight: 700; text-decoration: none; cursor: pointer;
+      padding: 15px 28px; border-radius: 999px; border: none; font-size: 1rem;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow); }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-line { background: var(--line-bg); color: #fff; box-shadow: 0 8px 24px rgba(6,199,85,0.25); }
+    .btn-line:hover { filter: brightness(0.95); }
+    .btn-outline { background: #fff; color: var(--primary-dark); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: var(--bg-soft); }
+
+    .hero-trust {
+      display: flex; flex-wrap: wrap; gap: 18px 28px; margin-top: 26px;
+      font-size: 0.85rem; color: var(--muted); font-weight: 700;
+    }
+    .hero-trust span { display: flex; align-items: center; gap: 6px; }
+
+    /* ===== Worries (共感) ===== */
+    .worries { background: var(--bg-soft); }
+    .worry-grid {
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+    }
+    @media (min-width: 640px) { .worry-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .worry-grid { grid-template-columns: repeat(3, 1fr); } }
+    .worry-card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px; display: flex; gap: 14px; align-items: flex-start;
+    }
+    .worry-card .ic {
+      flex: none; width: 42px; height: 42px; border-radius: 12px;
+      background: var(--bg-soft); display: grid; place-items: center; color: var(--primary);
+    }
+    .worry-card p { font-weight: 500; }
+    .worry-after {
+      text-align: center; margin-top: 36px;
+      font-size: 1.15rem; font-weight: 900;
+    }
+    .worry-after .hl { color: var(--primary); }
+
+    /* ===== Reasons ===== */
+    .reasons-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 880px) { .reasons-grid { grid-template-columns: repeat(3, 1fr); } }
+    .reason-card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 32px 24px; text-align: center; box-shadow: var(--shadow);
+    }
+    .reason-num {
+      display: inline-block; font-size: 0.8rem; font-weight: 900; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 6px;
+    }
+    .reason-ic {
+      width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 18px;
+      background: var(--bg-soft); display: grid; place-items: center; color: var(--primary);
+    }
+    .reason-card h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: 10px; }
+    .reason-card p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ===== Flow ===== */
+    .flow { background: var(--bg-soft); }
+    .flow-list { display: grid; gap: 16px; max-width: 760px; margin: 0 auto; }
+    .flow-step {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start;
+    }
+    .flow-step .step-no {
+      flex: none; width: 44px; height: 44px; border-radius: 50%;
+      background: var(--primary); color: #fff; font-weight: 900;
+      display: grid; place-items: center; font-size: 1.05rem;
+    }
+    .flow-step h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 4px; }
+    .flow-step p { color: var(--muted); font-size: 0.92rem; }
+
+    /* ===== Voices ===== */
+    .voice-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 880px) { .voice-grid { grid-template-columns: repeat(3, 1fr); } }
+    .voice-card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 28px 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 16px;
+    }
+    .voice-stars { color: var(--accent); letter-spacing: 2px; font-size: 1.05rem; }
+    .voice-text { font-weight: 500; }
+    .voice-person { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+    .voice-person img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+    .voice-person .meta strong { display: block; font-size: 0.95rem; }
+    .voice-person .meta span { font-size: 0.82rem; color: var(--muted); }
+
+    /* ===== FAQ ===== */
+    .faq { background: var(--bg-soft); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+    .faq-item {
+      background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none; cursor: pointer; padding: 20px 22px;
+      display: flex; align-items: center; gap: 12px; font-weight: 700;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary .q {
+      flex: none; width: 26px; height: 26px; border-radius: 7px;
+      background: var(--primary); color: #fff; display: grid; place-items: center;
+      font-weight: 900; font-size: 0.85rem;
+    }
+    .faq-item summary .arrow { margin-left: auto; transition: transform .2s ease; color: var(--muted); }
+    .faq-item[open] summary .arrow { transform: rotate(180deg); }
+    .faq-body { padding: 0 22px 20px 60px; color: var(--muted); }
+
+    /* ===== CTA / Form ===== */
+    .cta { background: linear-gradient(180deg, #ffffff 0%, var(--bg-soft) 100%); }
+    .cta-head { text-align: center; margin-bottom: 36px; }
+    .cta-head h2 { font-size: 1.7rem; font-weight: 900; text-wrap: balance; }
+    .cta-head p { color: var(--muted); margin-top: 12px; }
+
+    .cta-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 920px; margin: 0 auto; }
+    @media (min-width: 880px) { .cta-grid { grid-template-columns: 0.9fr 1.1fr; align-items: stretch; } }
+
+    .line-panel {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 32px 28px; text-align: center; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; justify-content: center; gap: 16px;
+    }
+    .line-panel .line-ic {
+      width: 60px; height: 60px; margin: 0 auto; border-radius: 16px;
+      background: var(--line-bg); display: grid; place-items: center; color: #fff;
+    }
+    .line-panel h3 { font-size: 1.2rem; font-weight: 900; }
+    .line-panel p { color: var(--muted); font-size: 0.92rem; }
+
+    .form-panel {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 32px 28px; box-shadow: var(--shadow);
+    }
+    .form-panel h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: 20px; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; }
+    .field label .req { color: #d6453d; font-size: 0.78rem; margin-left: 4px; }
+    .field input, .field textarea, .field select {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--line);
+      border-radius: 10px; font-family: inherit; font-size: 1rem; color: var(--ink);
+      background: #fdfefe;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(47,143,125,0.15);
+    }
+    .field textarea { resize: vertical; min-height: 96px; }
+    .form-note { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+    .form-panel .btn { width: 100%; margin-top: 6px; }
+
+    /* ===== Footer ===== */
+    .site-footer { background: var(--ink); color: #cdd8d4; padding: 40px 0; }
+    .site-footer .logo { color: #fff; margin-bottom: 12px; }
+    .site-footer .logo .mark { background: var(--primary); }
+    .site-footer .logo .plus { color: #8fd9c8; }
+    .site-footer p { font-size: 0.85rem; line-height: 1.8; }
+    .site-footer .copy { margin-top: 20px; font-size: 0.78rem; color: #8aa39c; }
+
+    /* ===== Sticky mobile CTA ===== */
+    .mobile-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+      border-top: 1px solid var(--line);
+      display: flex; gap: 10px; padding: 10px 14px;
+      box-shadow: 0 -6px 20px rgba(36,51,48,0.08);
+    }
+    .mobile-cta .btn { flex: 1; padding: 13px 10px; font-size: 0.95rem; }
+    @media (min-width: 768px) { .mobile-cta { display: none; } }
+    body { padding-bottom: 76px; }
+    @media (min-width: 768px) { body { padding-bottom: 0; } }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container inner">
+      <a href="#top" class="logo" aria-label="すまいPLUS ホーム">
+        <span class="mark">S</span>
+        <span>すまい<span class="plus">PLUS</span></span>
+      </a>
+      <a href="#contact" class="header-cta">無料相談・お見積り</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ① ファーストビュー -->
+    <section class="hero" aria-label="ファーストビュー">
+      <div class="hero-media">
+        <img src="/images/hero-home.png" alt="リフォーム後の明るく清潔感のあるリビング" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="container">
+          <span class="hero-badge">地域密着・累計2,000件以上の施工実績</span>
+          <h1>その住まいの悩み、<br><span class="hl">そのままにしていませんか？</span></h1>
+          <p class="lead">小さな修繕から大規模リフォームまで。すまいPLUSが、あなたの「困った」をまるごと解決します。まずはお気軽にご相談ください。</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-line" aria-label="LINEで無料相談">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.42 8.12.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56 1.1-.46 5.9-3.48 8.05-5.96C21.4 13.6 22 12 22 10.23 22 5.69 17.52 2 12 2z"/></svg>
+              LINEで相談する
+            </a>
+            <a href="#contact" class="btn btn-outline">フォームで問い合わせ</a>
+          </div>
+          <div class="hero-trust">
+            <span>✓ 相談・見積り無料</span>
+            <span>✓ 明朗会計</span>
+            <span>✓ 最短即日対応</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ② お悩み共感セクション -->
+    <section class="worries" aria-label="お悩み共感">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">YOUR WORRIES</span>
+          <h2>こんなお悩み、ありませんか？</h2>
+          <p>住まいの不安は、放っておくほど大きくなってしまうもの。</p>
+        </div>
+        <div class="worry-grid">
+          <div class="worry-card">
+            <span class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </span>
+            <p>水まわりの古さや水漏れが気になるけど、どこに頼めばいいか分からない</p>
+          </div>
+          <div class="worry-card">
+            <span class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+            </span>
+            <p>壁紙や床の汚れ・剥がれを、いつか直そうと思ったまま放置している</p>
+          </div>
+          <div class="worry-card">
+            <span class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 0l3-3m-3 3L9 5"/><rect x="3" y="8" width="18" height="13" rx="2"/></svg>
+            </span>
+            <p>見積りが高いのか安いのか分からず、業者選びに不安がある</p>
+          </div>
+          <div class="worry-card">
+            <span class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <p>バリアフリーや断熱など、将来を見据えた住まいにしたい</p>
+          </div>
+          <div class="worry-card">
+            <span class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg>
+            </span>
+            <p>外壁や屋根の劣化が心配だけど、点検のきっかけがつかめない</p>
+          </div>
+          <div class="worry-card">
+            <span class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h7"/><path d="M16 19l2 2 4-4"/></svg>
+            </span>
+            <p>小さな工事でも気軽に相談できる、近くの会社を探している</p>
+          </div>
+        </div>
+        <p class="worry-after">その悩み、<span class="hl">すまいPLUS がまるごと解決します。</span></p>
+      </div>
+    </section>
+
+    <!-- ③ 選ばれる理由 -->
+    <section aria-label="選ばれる理由">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">REASON</span>
+          <h2>すまいPLUSが選ばれる3つの理由</h2>
+        </div>
+        <div class="reasons-grid">
+          <div class="reason-card">
+            <span class="reason-num">REASON 01</span>
+            <div class="reason-ic" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>
+            </div>
+            <h3>明朗会計で安心</h3>
+            <p>追加料金の心配なし。工事前に詳細なお見積りをご提示し、ご納得いただいてから着工します。</p>
+          </div>
+          <div class="reason-card">
+            <span class="reason-num">REASON 02</span>
+            <div class="reason-ic" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+            </div>
+            <h3>自社施工の確かな技術</h3>
+            <p>経験豊富な自社の職人が一貫対応。下請け任せにせず、品質にとことんこだわります。</p>
+          </div>
+          <div class="reason-card">
+            <span class="reason-num">REASON 03</span>
+            <div class="reason-ic" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+            </div>
+            <h3>地域密着のスピード対応</h3>
+            <p>お近くだからこそ、最短即日でお伺い。アフターフォローまで末永くお付き合いします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ ご利用の流れ -->
+    <section class="flow" aria-label="ご利用の流れ">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">FLOW</span>
+          <h2>ご利用の流れ｜かんたん5ステップ</h2>
+          <p>お問い合わせから施工完了まで、すべて専任スタッフがサポートします。</p>
+        </div>
+        <div class="flow-list">
+          <div class="flow-step">
+            <span class="step-no">1</span>
+            <div>
+              <h3>お問い合わせ</h3>
+              <p>LINE・フォーム・お電話から、お気軽にご連絡ください。ご相談だけでも大歓迎です。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-no">2</span>
+            <div>
+              <h3>現地調査・ヒアリング</h3>
+              <p>専門スタッフが訪問し、住まいの状態とご要望をていねいに確認します。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-no">3</span>
+            <div>
+              <h3>お見積り・ご提案</h3>
+              <p>最適なプランと明確なお見積りをご提示。ご納得いただくまでご説明します。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-no">4</span>
+            <div>
+              <h3>施工</h3>
+              <p>自社の熟練職人が、安全・丁寧に工事を行います。進捗もこまめにご報告します。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-no">5</span>
+            <div>
+              <h3>お引き渡し・アフターフォロー</h3>
+              <p>仕上がりをご確認いただき完了。施工後の保証・点検も安心しておまかせください。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ お客様の声 -->
+    <section aria-label="お客様の声">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">VOICE</span>
+          <h2>お客様の声</h2>
+          <p>すまいPLUSをご利用いただいた皆さまからの声をご紹介します。</p>
+        </div>
+        <div class="voice-grid">
+          <div class="voice-card">
+            <div class="voice-stars" aria-label="評価5点">★★★★★</div>
+            <p class="voice-text">古くなったキッチンを丸ごとリフォーム。予算内で理想以上の仕上がりに。見積りが明確で安心して任せられました。</p>
+            <div class="voice-person">
+              <img src="/images/voice-1.png" alt="お客様 K.S様" />
+              <div class="meta"><strong>K.S 様</strong><span>40代・キッチンリフォーム</span></div>
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="voice-stars" aria-label="評価5点">★★★★★</div>
+            <p class="voice-text">水漏れの相談をLINEしたら即日来てくれました。小さな工事でも丁寧で、地元にこんな会社があって心強いです。</p>
+            <div class="voice-person">
+              <img src="/images/voice-2.png" alt="お客様 T.M様" />
+              <div class="meta"><strong>T.M 様</strong><span>50代・水まわり修繕</span></div>
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="voice-stars" aria-label="評価5点">★★★★★</div>
+            <p class="voice-text">将来を考えて浴室をバリアフリーに。職人さんの対応が親切で、アフターの点検まで安心。母も喜んでいます。</p>
+            <div class="voice-person">
+              <img src="/images/voice-3.png" alt="お客様 Y.H様" />
+              <div class="meta"><strong>Y.H 様</strong><span>60代・バリアフリー改修</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑥ FAQ -->
+    <section class="faq" aria-label="よくあるご質問">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">FAQ</span>
+          <h2>よくあるご質問</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary><span class="q">Q</span>相談や見積りに費用はかかりますか？<span class="arrow" aria-hidden="true">▾</span></summary>
+            <div class="faq-body">ご相談・現地調査・お見積りはすべて無料です。お見積り内容にご納得いただけない場合、もちろんお断りいただいて構いません。</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q">Q</span>小さな工事だけでもお願いできますか？<span class="arrow" aria-hidden="true">▾</span></summary>
+            <div class="faq-body">はい、蛇口交換や壁紙の一部補修など、小規模な工事も喜んでお引き受けします。「こんなこと頼んでいいのかな」という内容でもお気軽にご相談ください。</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q">Q</span>対応エリアはどこまでですか？<span class="arrow" aria-hidden="true">▾</span></summary>
+            <div class="faq-body">地域密着で営業しております。エリア外でもご相談に応じられる場合がございますので、まずはお問い合わせください。</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q">Q</span>工事中は家にいないとダメですか？<span class="arrow" aria-hidden="true">▾</span></summary>
+            <div class="faq-body">工事内容によって異なりますが、ご不在でも対応可能なケースが多くございます。鍵のお預かりや進捗のご報告など、ご都合に合わせて柔軟に対応します。</div>
+          </details>
+          <details class="faq-item">
+            <summary><span class="q">Q</span>支払い方法や保証について教えてください。<span class="arrow" aria-hidden="true">▾</span></summary>
+            <div class="faq-body">お支払いは現金・銀行振込・各種に対応しております。施工後の保証制度もご用意しており、万一の不具合にも誠実に対応いたします。</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦ 問い合わせCTA -->
+    <section class="cta" id="contact" aria-label="お問い合わせ">
+      <div class="container">
+        <div class="cta-head">
+          <h2>まずはお気軽にご相談ください</h2>
+          <p>相談・お見積りは無料です。LINEなら写真を送るだけで、かんたんにご相談いただけます。</p>
+        </div>
+        <div class="cta-grid">
+
+          <!-- LINE -->
+          <div class="line-panel">
+            <div class="line-ic" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.42 8.12.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56 1.1-.46 5.9-3.48 8.05-5.96C21.4 13.6 22 12 22 10.23 22 5.69 17.52 2 12 2z"/></svg>
+            </div>
+            <h3>LINEで相談する</h3>
+            <p>友だち追加して、お悩みやお部屋の写真を送るだけ。最短即日でお返事します。</p>
+            <a href="#" class="btn btn-line" aria-label="LINEで友だち追加して相談">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.42 8.12.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56 1.1-.46 5.9-3.48 8.05-5.96C21.4 13.6 22 12 22 10.23 22 5.69 17.52 2 12 2z"/></svg>
+              友だち追加して相談
+            </a>
+          </div>
+
+          <!-- Form -->
+          <div class="form-panel">
+            <h3>フォームで問い合わせ</h3>
+            <form action="#" method="post" novalidate>
+              <div class="field">
+                <label for="name">お名前<span class="req">必須</span></label>
+                <input type="text" id="name" name="name" placeholder="例）山田 太郎" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="tel">電話番号<span class="req">必須</span></label>
+                <input type="tel" id="tel" name="tel" placeholder="例）090-1234-5678" required autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" placeholder="例）info@example.com" autocomplete="email" />
+                <p class="form-note">ご返信の際に使用します。</p>
+              </div>
+              <div class="field">
+                <label for="type">ご相談内容</label>
+                <select id="type" name="type">
+                  <option value="">選択してください</option>
+                  <option>キッチン・水まわり</option>
+                  <option>浴室・トイレ・洗面</option>
+                  <option>内装（壁紙・床）</option>
+                  <option>外壁・屋根</option>
+                  <option>バリアフリー・断熱</option>
+                  <option>その他・全体的な相談</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">ご相談内容の詳細</label>
+                <textarea id="message" name="message" placeholder="お住まいのお悩みやご希望をご記入ください。"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">この内容で問い合わせる</button>
+              <p class="form-note" style="text-align:center; margin-top:12px;">送信いただいた内容は、ご相談対応の目的にのみ使用いたします。</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="logo">
+        <span class="mark">S</span>
+        <span>すまい<span class="plus">PLUS</span></span>
+      </div>
+      <p>住まいの困ったをまるごと解決する、地域密着のリフォーム会社です。<br>小さな修繕から大規模リフォームまで、お気軽にご相談ください。</p>
+      <p class="copy">&copy; 2026 すまいPLUS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="mobile-cta">
+    <a href="#contact" class="btn btn-line">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.42 8.12.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56 1.1-.46 5.9-3.48 8.05-5.96C21.4 13.6 22 12 22 10.23 22 5.69 17.52 2 12 2z"/></svg>
+      LINE相談
+    </a>
+    <a href="#contact" class="btn btn-primary">無料見積り</a>
+  </div>
+
+</body>
+</html>
