@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>すまいPLUS｜住まいの悩み、まるごと解決するリフォーム</title>
-  <meta name="description" content="その住まいの悩み、そのままにしていませんか？すまいPLUSは地域密着・明朗会計の安心リフォーム。無料相談・お見積りはLINEまたはフォームから。" />
+  <title>すまいサポートPRO｜すまいPLUS｜住まいの悩み、まるごと解決するリフォーム</title>
+  <meta name="description" content="すまいサポートPRO加盟店・すまいPLUSは地域密着・明朗会計の安心リフォーム。その住まいの悩み、そのままにしていませんか？無料相談・お見積りはLINEまたはフォームから。" />
   <meta name="theme-color" content="#ffffff" />
-  <meta property="og:title" content="すまいPLUS｜住まいの悩み、まるごと解決するリフォーム" />
-  <meta property="og:description" content="その住まいの悩み、そのままにしていませんか？無料相談・お見積り受付中。" />
+  <meta property="og:title" content="すまいサポートPRO｜すまいPLUS｜住まいの悩み、まるごと解決するリフォーム" />
+  <meta property="og:description" content="すまいサポートPRO加盟店・すまいPLUS。無料相談・お見積り受付中。" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,13 +73,16 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 64px;
     }
-    .logo { display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 1.2rem; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo .mark {
       width: 34px; height: 34px; border-radius: 9px;
       background: var(--primary); color: #fff;
       display: grid; place-items: center; font-size: 1.1rem; font-weight: 900;
     }
-    .logo .plus { color: var(--primary); }
+    .logo .logo-text { display: flex; flex-direction: column; gap: 1px; }
+    .logo .logo-brand { font-size: 1.1rem; font-weight: 900; color: var(--ink); line-height: 1.2; }
+    .logo .logo-brand span { color: var(--primary); }
+    .logo .logo-sub { font-size: 0.7rem; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; }
     .header-cta {
       display: none;
       background: var(--primary); color: #fff;
@@ -302,9 +305,12 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container inner">
-      <a href="#top" class="logo" aria-label="すまいPLUS ホーム">
+      <a href="#top" class="logo" aria-label="すまいサポートPRO加盟店 すまいPLUS ホーム">
         <span class="mark">S</span>
-        <span>すまい<span class="plus">PLUS</span></span>
+        <span class="logo-text">
+          <span class="logo-brand">すまいサポート<span>PRO</span></span>
+          <span class="logo-sub">加盟店：すまいPLUS</span>
+        </span>
       </a>
       <a href="#contact" class="header-cta">無料相談・お見積り</a>
     </div>
@@ -320,9 +326,9 @@
       </div>
       <div class="hero-content">
         <div class="container">
-          <span class="hero-badge">地域密着・累計2,000件以上の施工実績</span>
+          <span class="hero-badge">すまいサポートPRO 加盟店｜地域密着・累計2,000件以上の施工実績</span>
           <h1>その住まいの悩み、<br><span class="hl">そのままにしていませんか？</span></h1>
-          <p class="lead">小さな修繕から大規模リフォームまで。すまいPLUSが、あなたの「困った」をまるごと解決します。まずはお気軽にご相談ください。</p>
+          <p class="lead">すまいサポートPROの加盟店として、小さな修繕から大規模リフォームまで対応。地域密着のすまいPLUSが、あなたの「困った」をまるごと解決します。まずはお気軽にご相談ください。</p>
           <div class="hero-actions">
             <a href="https://line.me/ti/p/@012bbuuk" target="_blank" rel="noopener noreferrer" class="btn btn-line" aria-label="LINEで無料相談">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.42 8.12.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56 1.1-.46 5.9-3.48 8.05-5.96C21.4 13.6 22 12 22 10.23 22 5.69 17.52 2 12 2z"/></svg>
@@ -613,9 +619,22 @@
     <div class="container">
       <div class="logo">
         <span class="mark">S</span>
-        <span>すまい<span class="plus">PLUS</span></span>
+        <span class="logo-text">
+          <span class="logo-brand" style="color:#fff;">すまいサポート<span style="color:#8fd9c8;">PRO</span></span>
+          <span class="logo-sub">加盟店：すまいPLUS</span>
+        </span>
       </div>
-      <p>住まいの困ったをまるごと解決する、地域密着のリフォーム会社です。<br>小さな修繕から大規模リフォームまで、お気軽にご相談ください。</p>
+      <p style="margin-top:12px;">住まいの困ったをまるごと解決する、地域密着のリフォーム会社です。<br>小さな修繕から大規模リフォームまで、お気軽にご相談ください。</p>
+      <p style="margin-top:16px; font-size:0.82rem; color:#8aa39c; line-height:2;">
+        本店舗は <a href="https://ebisugroup.jp/" target="_blank" rel="noopener noreferrer" style="color:#8fd9c8; text-decoration:underline;">すまいサポートPRO</a> のフランチャイズ加盟店として運営しております。<br>
+        フランチャイズ本部：株式会社EBISUGROUP　〒140-0012 東京都品川区勝島1丁目3番49号 加瀬ビル116 202号
+      </p>
+      <p style="margin-top:16px; font-size:0.82rem; color:#cdd8d4; line-height:2; border-top:1px solid #3a4f4a; padding-top:16px;">
+        <strong style="color:#fff; font-size:0.88rem;">すまいPLUS（加盟店情報）</strong><br>
+        所在地：〒491-0001 愛知県一宮市東五城字北作野49番5<br>
+        電話番号：〇〇〇-〇〇〇〇-〇〇〇〇（取得中）<br>
+        事業内容：住宅リフォーム全般（外装・内装・水まわり・バリアフリー・断熱 他）
+      </p>
       <p class="copy">&copy; 2026 すまいPLUS. All rights reserved.</p>
     </div>
   </footer>
