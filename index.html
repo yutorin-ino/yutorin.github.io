@@ -39,6 +39,19 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ===== Page Background Image ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&auto=format&fit=crop&q=60");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.07;
+    }
+
     img { display: block; max-width: 100%; height: auto; }
 
     .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
